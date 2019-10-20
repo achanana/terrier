@@ -116,6 +116,7 @@ class Exception : public std::runtime_error {
                                                                                                 \
    public:                                                                                      \
     e_name(const char *msg, const char *file, int line) : Exception(e_type, msg, file, line) {} \
+    e_name(std::string &msg, const char *file, int line) : Exception(e_type, msg, file, line) {}\
   }
 
 DEFINE_EXCEPTION(NotImplementedException, ExceptionType::NOT_IMPLEMENTED);
